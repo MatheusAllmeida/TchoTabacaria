@@ -134,6 +134,9 @@ function fecharCarrinho() {
 function esvaziarCarrinho() {
     carrinhoItens = []; // Esvazia o carrinho
     contadorItens = 0; // Zera o contador de itens
+    contadorItensCarrinho.textContent = contadorItens; // Atualiza o texto do contador de itens
+
+    // Agora chamamos a função para fechar o carrinho após esvaziar
     fecharCarrinho(); // Fecha o modal do carrinho
 }
 
@@ -159,6 +162,9 @@ function comprar() {
 
     var numeroWhatsApp = "+554989195649";
     window.open("https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(mensagem), "_blank");
+
+    // Agora chamamos a função para esvaziar o carrinho após a compra
+    esvaziarCarrinho();
 }
 
 // Event listener para adicionar produtos ao carrinho
@@ -179,26 +185,25 @@ document.getElementById('carrinho').addEventListener('click', function () {
     }
 });
 
+// Pegar o modal
+var modal = document.getElementById("myModal");
 
- // Pegar o modal
- var modal = document.getElementById("myModal");
+// Quando a página for carregada, abrir o modal
+window.onload = function() {
+    modal.style.display = "block";
+}
 
- // Quando a página for carregada, abrir o modal
- window.onload = function() {
-     modal.style.display = "block";
- }
+// Pegar o elemento <span> que fecha o modal
+var span = document.getElementsByClassName("close")[0];
 
- // Pegar o elemento <span> que fecha o modal
- var span = document.getElementsByClassName("close")[0];
+// Quando o usuário clicar no <span> (x), fechar o modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
 
- // Quando o usuário clicar no <span> (x), fechar o modal
- span.onclick = function() {
-     modal.style.display = "none";
- }
-
- // Quando o usuário clicar em qualquer lugar fora do modal, fechar o modal
- window.onclick = function(event) {
-     if (event.target == modal) {
-         modal.style.display = "none";
-     }
- }
+// Quando o usuário clicar em qualquer lugar fora do modal, fechar o modal
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
