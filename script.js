@@ -28,7 +28,7 @@ function voltarAoTopo() {
 
 // função alerta adicionou ao carrinho
 function mostrarAlerta() {
-    var mensagem = "Produto Adicionado ao carrinho";
+    var mensagem = "Adicionado ao carrinho";
     var tempo = 1000; // 1 segundos
 
     var alerta = document.getElementById('meuAlerta');
@@ -105,7 +105,7 @@ function abrirCarrinho() {
     var listaItensCarrinho = modal.querySelector('#listaItensCarrinho');
     carrinhoItens.forEach(item => {
         var li = document.createElement('li');
-        li.textContent = item.nome + ' (' + item.quantidade + 'x ' + item.preco + ')';
+        li.textContent = item.nome + ' (' + item.quantidade + 'un ' + ')';
         listaItensCarrinho.appendChild(li);
     });
 
@@ -138,12 +138,12 @@ function esvaziarCarrinho() {
 }
 
 // Função para adicionar ao carrinho e exibir pop-up
-function adicionarAoCarrinho(produtoNome, produtoPreco) {
+function adicionarAoCarrinho(produtoNome) {
     var produtoExistente = carrinhoItens.find(item => item.nome === produtoNome);
     if (produtoExistente) {
         produtoExistente.quantidade += 1; // Aumenta a quantidade do produto existente
     } else {
-        carrinhoItens.push({ nome: produtoNome, preco: produtoPreco, quantidade: 1 }); // Adiciona o produto ao carrinho com quantidade 1
+        carrinhoItens.push({ nome: produtoNome, quantidade: 1 }); // Adiciona o produto ao carrinho com quantidade 1
     }
 
     contadorItens++; // Incrementa o contador de itens
@@ -154,7 +154,7 @@ function adicionarAoCarrinho(produtoNome, produtoPreco) {
 function comprar() {
     var mensagem = "Fala *John*! Gostaria de fazer um pedido:\n";
     carrinhoItens.forEach(item => {
-        mensagem += "- " + item.nome + " (" + item.quantidade + "x " + item.preco + ")\n";
+        mensagem += "- " + item.nome + " (" + item.quantidade + " un " + ")\n";
     });
 
     var numeroWhatsApp = "+554989195649";
@@ -166,8 +166,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.produto img').forEach(imagem => {
         imagem.addEventListener('click', function () {
             const produtoNome = this.parentNode.getAttribute('data-nome');
-            const produtoPreco = this.parentNode.querySelector('p').innerText;
-            adicionarAoCarrinho(produtoNome, produtoPreco);
+
+            adicionarAoCarrinho(produtoNome);
         });
     });
 });
