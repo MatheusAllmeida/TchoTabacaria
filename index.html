@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tcho Tabacaria</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="LOGO.jpg" type="LOGO TCHO">
+</head>
+
+<body>
+
+	<div id="myModal" class="modal">
+
+		<!-- Conteúdo do modal -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>Proibida a venda para menores de 18 anos.</p>
+		</div>
+
+	</div>
+
+	<div id="meuAlerta" class="alerta"></div>
+	<div class="loja">
+		<h1>Tcho Tabacaria</h1>
+		<div class="menu">
+			<div class="dropdown">
+				<button class="dropbtn">Essências</button>
+				<div class="dropdown-content">
+					<a href="#Chacal">Chacal</a>
+					<a href="#FACTORY">FACTORY</a>
+					<a href="#FM">FM</a>
+					<a href="#IGNITE">IGNITE</a>
+					<a href="#ZIGGY">ZIGGY</a>
+					<a href="#ONIX">ONIX</a>
+					<a href="#Zomo">ZOMO</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn" a href>Aluminio</button>
+				<div class="dropdown-content">
+					<a href="#Aluminio">Aluminio</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">Carvão</button>
+				<div class="dropdown-content">
+					<a href="#">ZIGGY</a>
+					<a href="#">ZOMO</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="carrinho">
+		<img src="compras.png" alt="Carrinho de Compras">
+		<span id="contadorCarrinho" class="contador-itens">0</span>
+	</div>
+
+	<button id="btnVoltarTopo" onclick="voltarAoTopo()"><img src="topo.png" alt="topo" srcset=""></button>
+	<div class="container">
+		<!-- incio de uma marca -->
+		<div class="marca" id="Chacal">
+			<h1>Chacal</h1>
+		</div>
+		<div class="linha-produtos">
+			<!-- Produto 1 -->
+			<div class="produto" data-nome="Bubba Grape">
+				<img src="Chacal/Bubba Grape.jpg" onclick="mostrarAlerta()" alt="Bubba Grape">
+				<h2>Bubba Grape</h2>
+				<p>R$ 12,00</p>
+			</div>
+			<!-- Produto 2 -->
+			<div class="produto" data-nome="Bubba Strawberry">
+				<img src="Chacal/Bubba Strawberry.jpg" onclick="mostrarAlerta()" alt="Bubba Strawberry">
+				<h2>Bubba Strawberryt</h2>
+				<p>R$ 12,00</p>
+			</div>
+			<!-- Produto 3 -->
+			<div class="produto" data-nome="Ice">
+				<img src="Chacal/Ice.jpg" onclick="mostrarAlerta()" alt="Ice">
+				<h2>Ice</h2>
+				<p>R$ 12,00</p>
+			</div>
+			<!-- Produto 4 -->
+			<div class="produto" data-nome="Mint">
+				<img src="Chacal/Mint.jpg" onclick="mostrarAlerta()" alt="Mint">
+				<h2>Mint</h2>
+				<p>R$ 12,00</p>
+			</div>
+			<!-- Produto 5 -->
+			<div class="produto" data-nome="Sweet lemon">
+				<img src="Chacal/Sweet lemon.jpg" onclick="mostrarAlerta()" alt="Sweet lemon">
+				<h2>Sweet lemon</h2>
+				<p>R$ 12,00</p>
+			</div>
+		</div>
+		<!-- Fim marca -->
+		<!-- incio de uma marca -->
+		<div class="marca" id="FACTORY">
+			<h1>FACTORY</h1>
+		</div>
+		<div class="linha-produtos">
+			<!-- Produto 1 -->
+			<div class="produto" data-nome="Blast Mint">
+				<img src="Factory/Blast Mint.jpg" onclick="mostrarAlerta()" alt="Blast Mint">
+				<h2>Blast Mint</h2>
+				<p>R$ 10,50</p>
+			</div>
+			<!-- Produto 2 -->
+			<div class="produto" data-nome="Candy Fruit">
+				<img src="Factory/Candy Fruit.png" onclick="mostrarAlerta()" alt="Candy Fruit">
+				<h2>Candy Fruit</h2>
+				<p>R$ 10.50</p>
+			</div>
+			<!-- Produto 3 -->
+			<div class="produto" data-nome="Cherry fusion">
+				<img src="Factory/Cherry fusion.jpg" onclick="mostrarAlerta()" alt="Cherry fusion">
+				<h2>Cherry fusion</h2>
+				<p>R$ 10,50</p>
+			</div>
+			<!-- Produto 4 -->
+			<div class="produto" data-nome="Cinnamon Gum">
+				<img src="Factory/Cinnamon Gum.jpg" onclick="mostrarAlerta()" alt="Cinnamon Gum">
+				<h2>Cinnamon Gum</h2>
+				<p>R$ 10,500</p>
+			</div>
+			<!-- Produto 5 -->
+			<div class="produto" data-nome="Dreysson Rodrigues">
+				<img src="Factory/Dreysson Rodrigues.png" onclick="mostrarAlerta()" alt="Dreysson Rodrigues">
+				<h2>Dreysson Rodrigues</h2>
+				<p>R$ 10,50</p>
+			</div>
+			<!-- Produto 6 -->
+			<div class="produto" data-nome="Exotic Grape">
+				<img src="Factory/Exotic Grape.jpg" onclick="mostrarAlerta()" alt="Exotic Grapes">
+				<h2>Exotic Grape</h2>
+				<p>R$ 10,50</p>
+			</div>
+			<!-- Produto 7 -->
+			<div class="produto" data-nome="Greem Apples">
+				<img src="Factory/Greem Apple.jpg" onclick="mostrarAlerta()" alt="Greem Apple">
+				<h2>Greem Apple</h2>
+				<p>R$ 10,50</p>
+			</div>
+			<!-- Produto 8 -->
+			<div class="produto" data-nome="Gum Berry">
+				<img src="Factory/Gum Berry.jpg" onclick="mostrarAlerta()" alt="Gum Berry">
+				<h2>Dreysson Rodrigues</h2>
+				<p>R$ 10,50</p>
+			</div>
+			<!-- Produto 9 -->
+			<div class="produto" data-nome="Jonatas Felipe">
+				<img src="Factory/Jonatas Felipe.jpg" onclick="mostrarAlerta()" alt="Jonatas Felipe">
+				<h2>Jonatas Felipe</h2>
+				<p>R$ 10,50</p>
+			</div>
+			<!-- Produto 10 -->
+			<div class="produto" data-nome="Snow Mint">
+				<img src="Factory/Snow Mint.jpg" onclick="mostrarAlerta()" alt="Snow Mint">
+				<h2>Snow Mint</h2>
+				<p>R$ 10,50</p>
+			</div>
+			<!-- Produto 11 -->
+			<div class="produto" data-nome="Strawberry Lemon">
+				<img src="Factory/Strawberry Lemon.jpg" onclick="mostrarAlerta()" alt="Strawberry Lemon">
+				<h2>Strawberry Lemon</h2>
+				<p>R$ 10,50</p>
+			</div>
+			<!-- Produto 12 -->
+			<div class="produto" data-nome="Summer Fruit's">
+				<img src="Factory/Summer Fruit's.jpg" onclick="mostrarAlerta()" alt="Summer Fruit's">
+				<h2>Summer Fruit's</h2>
+				<p>R$ 10,50</p>
+			</div>
+			<!-- Produto 13 -->
+			<div class="produto" data-nome="Watermelon Gum">
+				<img src="Factory/Watermelon Gum.jpg" onclick="mostrarAlerta()" alt="DWatermelon Gum">
+				<h2>Watermelon Gum</h2>
+				<p>R$ 10,50</p>
+			</div>
+		</div>
+		<!-- Fim marca -->
+		<!-- incio de uma marca -->
+		<div class="marca" id="FM">
+			<h1>FM</h1>
+		</div>
+		<div class="linha-produtos">
+			<!-- Produto 1 -->
+			<div class="produto" data-nome="Frost Ices">
+				<img src="FM/Frost Ice.jpg" onclick="mostrarAlerta()" alt="Frost Ice">
+				<h2>Frost Ice</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 2 -->
+			<div class="produto" data-nome="Happy Night">
+				<img src="FM/Happy Night.jpg" onclick="mostrarAlerta()" alt="Happy Night">
+				<h2>Happy Night</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 3 -->
+			<div class="produto" data-nome="Mangosteen">
+				<img src="FM/Mangosteen.jpg" onclick="mostrarAlerta()" alt="Mangosteen">
+				<h2>Mangosteen</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 4 -->
+			<div class="produto" data-nome="Menta Azul">
+				<img src="FM/Menta Azul.jpg" onclick="mostrarAlerta()" alt="Menta Azul">
+				<h2>Menta Azul</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 5 -->
+			<div class="produto" data-nome="Pitaya e Lichia">
+				<img src="FM/Pitaya e Lichia.jpg" onclick="mostrarAlerta()" alt="Pitaya e Lichia">
+				<h2>Pitaya e Lichia</h2>
+				<p>R$ 11,00</p>
+			</div>
+		</div>
+		<!-- Fim marca -->
+		<!-- incio de uma marca -->
+		<div class="marca" id="IGNITE">
+			<h1>IGNITE</h1>
+		</div>
+		<div class="linha-produtos">
+			<!-- Produto 1 -->
+			<div class="produto" data-nome="Banana Ice">
+				<img src="Ignite/Banana Ice.jpg" onclick="mostrarAlerta()" alt="Banana Ice">
+				<h2>Frost Ice</h2>
+				<p>R$ 13,00</p>
+			</div>
+			<!-- Produto 2 -->
+			<div class="produto" data-nome="Grape Ice">
+				<img src="Ignite/Grape Ice.jpg" onclick="mostrarAlerta()" alt="Grape Ice">
+				<h2>Grape Ice</h2>
+				<p>R$ 13,00</p>
+			</div>
+			<!-- Produto 3 -->
+			<div class="produto" data-nome="Lemon Melon">
+				<img src="Ignite/Lemon Melon.jpg" onclick="mostrarAlerta()" alt="Lemon Melon">
+				<h2>Lemon Melon</h2>
+				<p>R$ 13,00</p>
+			</div>
+			<!-- Produto 4 -->
+			<div class="produto" data-nome="Peach Cantaloupe">
+				<img src="Ignite/Peach Cantaloupe.jpg" onclick="mostrarAlerta()" alt="Peach Cantaloupe">
+				<h2>Peach Cantaloupe</h2>
+				<p>R$ 13,00</p>
+			</div>
+		</div>
+		<!-- Fim marca -->
+		<!-- incio de uma marca -->
+		<div class="marca" id="ZIGGY">
+			<h1>ZIGGY</h1>
+		</div>
+		<div class="linha-produtos">
+			<!-- Produto 1 -->
+			<div class="produto" data-nome="Berry">
+				<img src="Ziggy/1.png" onclick="mostrarAlerta()" alt="Berry">
+				<h2>Berry</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 2 -->
+			<div class="produto" data-nome="Abacaxi tropical">
+				<img src="Ziggy/2.png" onclick="mostrarAlerta()" alt="Abacaxi tropical">
+				<h2>Abacaxi Tropical</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 3 -->
+			<div class="produto" data-nome="Banana tropical">
+				<img src="Ziggy/3.png" onclick="mostrarAlerta()" alt="Banana tropical">
+				<h2>Banana Tropical</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 4 -->
+			<div class="produto" data-nome="Caju Tropical">
+				<img src="Ziggy/4.png" onclick="mostrarAlerta()" alt="Caju Tropical">
+				<h2>Caju Tropical</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 5 -->
+			<div class="produto" data-nome="Coco Tropical">
+				<img src="Ziggy/5.png" onclick="mostrarAlerta()" alt="Coco Tropical">
+				<h2>Coco Tropical</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 6 -->
+			<div class="produto" data-nome="Manga Tropical">
+				<img src="Ziggy/6.png" onclick="mostrarAlerta()" alt="Manga Tropical">
+				<h2>Manga Tropical</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 7 -->
+			<div class="produto" data-nome="Laranjola">
+				<img src="Ziggy/7.png" onclick="mostrarAlerta()" alt="Laranjola">
+				<h2>Laranjola Tropical</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 8 -->
+			<div class="produto" data-nome="Tropical">
+				<img src="Ziggy/8.png" onclick="mostrarAlerta()" alt="Tropical">
+				<h2>Tropical</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 9 -->
+			<div class="produto" data-nome="Hapocalyx Mint">
+				<img src="Ziggy/9.png" onclick="mostrarAlerta()" alt="Hapocalyx mint">
+				<h2>Hapocalyx Mint</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 10 -->
+			<div class="produto" data-nome="Burley Mint">
+				<img src="Ziggy/10.png" onclick="mostrarAlerta()" alt="Burley Mint">
+				<h2>Burley Mint</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 11 -->
+			<div class="produto" data-nome="Caffe Macchiato">
+				<img src="Ziggy/11.png" onclick="mostrarAlerta()" alt="Caffe Macchiato">
+				<h2>Caffe Macchiato</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 12 -->
+			<div class="produto" data-nome="Grape Starburst">
+				<img src="Ziggy/12.png" onclick="mostrarAlerta()" alt="Grape Starburst">
+				<h2>Grape Starburst</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 13 -->
+			<div class="produto" data-nome="Cherry Starburst">
+				<img src="Ziggy/13.png" onclick="mostrarAlerta()" alt="Cherry Starburst">
+				<h2>Cherry Starburst</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 14 -->
+			<div class="produto" data-nome="Frutti">
+				<img src="Ziggy/14.png" onclick="mostrarAlerta()" alt="Frutti">
+				<h2>Frutti</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 15 -->
+			<div class="produto" data-nome="Fresh Melon">
+				<img src="Ziggy/15.png" onclick="mostrarAlerta()" alt="Fresh Melon">
+				<h2>Fresh Melon</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 16 -->
+			<div class="produto" data-nome="Fresh Lemon">
+				<img src="Ziggy/16.png" onclick="mostrarAlerta()" alt="Fresh Lemon">
+				<h2>Fresh Lemon</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 17 -->
+			<div class="produto" data-nome="Fresh Açai">
+				<img src="Ziggy/17.png" onclick="mostrarAlerta()" alt="Fresh Açai">
+				<h2>Fresh Açai</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 18 -->
+			<div class="produto" data-nome="Mix Duas Maças">
+				<img src="Ziggy/18.png" onclick="mostrarAlerta()" alt="Mix Duas Maças">
+				<h2>Mix Duas Maças</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 19 -->
+			<div class="produto" data-nome="Mix Frutas Amarelas">
+				<img src="Ziggy/19.png" onclick="mostrarAlerta()" alt="Mix Frutas Amarelas">
+				<h2>Mix Frutas Amarelas</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 20 -->
+			<div class="produto" data-nome="Mix Duas Goiabas">
+				<img src="Ziggy/20.png" onclick="mostrarAlerta()" alt="Mix Duas Goiabas">
+				<h2>Mix Duas Goiabas</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 21 -->
+			<div class="produto" data-nome="Mix Laranja e Morango">
+				<img src="Ziggy/21.png" onclick="mostrarAlerta()" alt="Mix Laranja e Morango">
+				<h2>Mix Laranja e Morango</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 22 -->
+			<div class="produto" data-nome="Mix Frutas Roxas">
+				<img src="Ziggy/22.png" onclick="mostrarAlerta()" alt="Mix Frutas Roxas">
+				<h2>Mix Frutas Roxas</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 23 -->
+			<div class="produto" data-nome="Red Lemonade">
+				<img src="Ziggy/23.png" onclick="mostrarAlerta()" alt="Red Lemonade">
+				<h2>Red Lemonade</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 24 -->
+			<div class="produto" data-nome="Tanger Bomb">
+				<img src="Ziggy/24.png" onclick="mostrarAlerta()" alt="Tanger Bomb">
+				<h2>Tanger Bomb</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 25 -->
+			<div class="produto" data-nome="Watermelon Bomb">
+				<img src="Ziggy/25.png" onclick="mostrarAlerta()" alt="Watermelon Bomb">
+				<h2>Watermelon Bomb</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 26 -->
+			<div class="produto" data-nome="Yellow Starburst">
+				<img src="Ziggy/26.png" onclick="mostrarAlerta()" alt="Yellow Starburst">
+				<h2>Yellow Starburst</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 27 -->
+			<div class="produto" data-nome="Yogurt">
+				<img src="Ziggy/27.png" onclick="mostrarAlerta()" alt="Yogur">
+				<h2>Yogur</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Adicione mais produtos conforme necessário -->
+		</div>
+		<!-- incio de uma marca -->
+		<div class="marca" id="ONIX">
+			<h1>ONIX</h1>
+		</div>
+		<div class="linha-produtos">
+			<!-- Produto 1 -->
+			<div class="produto" data-nome="Apple">
+				<img src="Onix/1.png" onclick="mostrarAlerta()" alt="Apple">
+				<h2>Apple</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 2 -->
+			<div class="produto" data-nome="Drops">
+				<img src="Onix/2.png" onclick="mostrarAlerta()" alt="Drops">
+				<h2>Drops</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 3 -->
+			<div class="produto" data-nome="Goiaba e Morango">
+				<img src="Onix/3.png" onclick="mostrarAlerta()" alt="Goiaba e Morango">
+				<h2>Goiaba e Morango</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 4 -->
+			<div class="produto" data-nome="Grape">
+				<img src="Onix/4.png" onclick="mostrarAlerta()" alt="Grape">
+				<h2>Grape</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 5 -->
+			<div class="produto" data-nome="Hight Lemon">
+				<img src="Onix/5.png" onclick="mostrarAlerta()" alt="Hight Lemon">
+				<h2>Hight Lemon</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 6 -->
+			<div class="produto" data-nome="High Passion">
+				<img src="Onix/6.png" onclick="mostrarAlerta()" alt="High Passion">
+				<h2>High Passion</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 7 -->
+			<div class="produto" data-nome="High Herry">
+				<img src="Onix/7.png" onclick="mostrarAlerta()" alt="High Herry">
+				<h2>High Herry</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 8 -->
+			<div class="produto" data-nome="High">
+				<img src="Onix/8.png" onclick="mostrarAlerta()" alt="High Tutti">
+				<h2>igh Tutti</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 9 -->
+			<div class="produto" data-nome="Koke">
+				<img src="Onix/9.png" onclick="mostrarAlerta()" alt="Koke">
+				<h2>Koke</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 10 -->
+			<div class="produto" data-nome="Mint">
+				<img src="Onix/10.png" onclick="mostrarAlerta()" alt="Mint">
+				<h2>Mint</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 11 -->
+			<div class="produto" data-nome="Orange">
+				<img src="Onix/11.jpg" onclick="mostrarAlerta()" alt="Orange">
+				<h2>Orange</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 12 -->
+			<div class="produto" data-nome="Pear">
+				<img src="Onix/12.png" onclick="mostrarAlerta()" alt="Pear">
+				<h2>Pear</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 13 -->
+			<div class="produto" data-nome="Pear">
+				<img src="Onix/13.png" onclick="mostrarAlerta()" alt="Pear">
+				<h2>Pear</h2>
+				<p>R$ 11,00</p>
+			</div>
+			<!-- Produto 14 -->
+			<div class="produto" data-nome="Yellow Drops">
+				<img src="Onix/14.png" onclick="mostrarAlerta()" alt="Yellow Drops">
+				<h2>Yellow Drops</h2>
+				<p>R$ 11,00</p>
+			</div>
+		</div>
+		<!-- Adicione mais marcas e produtos conforme necessário -->
+		<div class="marca" id="Zomo">
+			<h1>Zomo</h1>
+		</div>
+		<div class="linha-produtos">
+			<!-- Produto 1 -->
+			<div class="produto" data-nome="Buzz">
+				<img src="Zomo/Buzz.jpg" onclick="mostrarAlerta()" alt="Buzz">
+				<h2>Buzz</h2>
+				<p>R$ 10,00</p>
+			</div>
+			<!-- Produto 2 -->
+			<div class="produto" data-nome="Chiclete Tutii Frutti">
+				<img src="Zomo/Chiclete Tutii Frutti.jpg" onclick="mostrarAlerta()" alt="Chiclete Tutii Frutti">
+				<h2>Chiclete Tutii Frutti</h2>
+				<p>R$ 10,00</p>
+			</div>
+			<!-- Produto 3 -->
+			<div class="produto" data-nome="Framboera">
+				<img src="Zomo/Framboera.jpg" onclick="mostrarAlerta()" alt="Framboera">
+				<h2>Framboera</h2>
+				<p>R$ 10,00</p>
+			</div>
+			<!-- Produto 4 -->
+			<div class="produto" data-nome="Hype">
+				<img src="Zomo/hype.jpg" onclick="mostrarAlerta()" alt="Hype">
+				<h2>Hype</h2>
+				<p>R$ 10,00</p>
+			</div>
+			<!-- Produto 5 -->
+			<div class="produto" data-nome="Hype">
+				<img src="Zomo/hype.jpg" onclick="mostrarAlerta()" alt="Hype">
+				<h2>Hype</h2>
+				<p>R$ 10,00</p>
+			</div>
+			<!-- Produto 6 -->
+			<div class="produto" data-nome="Lemon Cake">
+				<img src="Zomo/Lemon Cake.jpg" onclick="mostrarAlerta()" alt="Lemon Cake">
+				<h2>Lemon Cake</h2>
+				<p>R$ 10,00</p>
+			</div>
+			<!-- Produto 7 -->
+			<div class="produto" data-nome="Milkshake de Banana">
+				<img src="Zomo/Milkshake de Banana.jpg" onclick="mostrarAlerta()" alt="Milkshake de Banana">
+				<h2>Milkshake de Banana</h2>
+				<p>R$ 10,00</p>
+			</div>
+			<!-- Produto 8 -->
+			<div class="produto" data-nome="Refri loko">
+				<img src="Zomo/Refri loko.jpg" onclick="mostrarAlerta()" alt="Refri loko">
+				<h2>Refri loko</h2>
+				<p>R$ 10,00</p>
+			</div>
+			<!-- Produto 9 -->
+			<div class="produto" data-nome="Stone">
+				<img src="Zomo/Stone.jpg" onclick="mostrarAlerta()" alt="Stone">
+				<h2>Stone</h2>
+				<p>R$ 10,00</p>
+			</div>
+			<!-- Produto 10 -->
+			<div class="produto" data-nome="Strong Min">
+				<img src="Zomo/Strong Mint.jpg" onclick="mostrarAlerta()" alt="Strong Min">
+				<h2>Strong Min</h2>
+				<p>R$ 10,00</p>
+			</div>
+			<!-- Produto 11 -->
+			<div class="produto" data-nome="Uva">
+				<img src="Zomo/uva.jpg" onclick="mostrarAlerta()" alt="Uva">
+				<h2>Uva</h2>
+				<p>R$ 10,00</p>
+			</div>
+		</div>
+		<!-- Fim marca -->
+		<!-- incio de uma marca -->
+		<div class="marca" id="Aluminio">
+			<h1>Aluminio</h1>
+		</div>
+		<div class="linha-produtos">
+			<!-- Produto 1 -->
+			<div class="produto" data-nome="Predator 50 Folhas">
+				<img src="Aluminio/Aluminio Predator 50 Folhas.png" onclick="mostrarAlerta()" alt="Predator 50 Folhas">
+				<h2>Predator 50 Folhas</h2>
+				<p>R$ 17,00</p>
+			</div>
+			<!-- Produto 2 -->
+			<div class="produto" data-nome="Predator 26 Folhas">
+				<img src="Aluminio/Aluminio Predator 26 Folhas.png" onclick="mostrarAlerta()" alt="Predator 26 Folhas">
+				<h2>Predator 26 Folhas</h2>
+				<p>R$ 10,00</p>
+			</div>
+			<!-- Produto 3 -->
+			<div class="produto" data-nome="Stan Hooka">
+				<img src="Aluminio/Stan Hooka.png" onclick="mostrarAlerta()" alt="Stan Hooka">
+				<h2>Stan Hooka</h2>
+				<p>R$ 17,00</p>
+			</div>
+			<!-- Produto 4 -->
+			<div class="produto" data-nome="controlador de calor">
+				<img src="Aluminio/controlador de calor.png" onclick="mostrarAlerta()" alt="Controlador de Calor">
+				<h2>Controlador de Calor</h2>
+				<p>R$ 38,00</p>
+			</div>
+		</div>
+		<!-- Fim marca -->
+	</div>
+	<!-- Footer com o WhatsApp -->
+	<footer>
+		<h2>WhatsApp <a href=""><a href="https://wa.me/5549989195649" target="_blank">
+					<span class="whatsapp-icon">49 989195649</span>
+				</a>
+		</h2>
+	</footer>
+	<script src="script.js" defer></script>
+</body>
+
+</html>
