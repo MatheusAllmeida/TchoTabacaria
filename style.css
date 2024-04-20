@@ -168,7 +168,7 @@ body {
 #carrinho {
     cursor: pointer;
     position: fixed;
-    right: 20px;
+    right: 9px;
     top: 89px;
     z-index: 1000;
     background-color: var(--cor-background);
