@@ -387,6 +387,7 @@ footer .whatsapp-icon {
     width: 80%;
     max-width: 400px;
     text-align: center;
+    z-index: 9999;
 }
 
 /* Estilos para o botão de fechar */
