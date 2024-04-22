@@ -231,7 +231,6 @@ body {
 
 .dropbtn {
     background-color: var(--cor-background);
-    /* Alterado para uma cor de fundo diferente */
     color: var(--cor-texto);
     padding: 10px 20px;
     border: none;
@@ -240,35 +239,31 @@ body {
     transition: background-color 0.3s ease;
 }
 
-
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: var(--cor-background);
-    /* Alterado para a cor de fundo do corpo */
     min-width: 160px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
     padding: 10px;
-    /* Adicionado para espaçamento interno */
+    text-align: center;
+    /* Centraliza horizontalmente em relação ao botão principal */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .dropdown-content a {
     color: var(--cor-texto);
-    /* Alterado para a cor de texto do corpo */
     padding: 8px 16px;
-    /* Alterado para ajustar o espaçamento */
     text-decoration: none;
     display: block;
     transition: background-color 0.3s ease;
-    /* Adicionado efeito de transição */
 }
 
 .dropdown-content a:hover {
     background-color: rgb(184, 119, 0);
-    /* Alterado para a cor de destaque ao passar o mouse */
     color: white;
-    /* Alterado para a cor de texto ao passar o mouse */
 }
 
 .dropdown:hover .dropdown-content {
