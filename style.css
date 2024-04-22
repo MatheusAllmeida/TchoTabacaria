@@ -101,17 +101,15 @@ body {
 }
 
 .produto img {
-    width: 100%;
-    /* Largura de 100% */
-    height: auto;
+    width: 100%;  /* Largura de 100% */
+    max-height: 290px; /* Largura maxima */
     display: block;
+    object-fit: cover;  /* Manter proporção da imagem */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease;
-    /* Transição de transformação e opacidade */
-    object-fit: cover;
-    /* Manter proporção da imagem */
 }
 
-.produto:hover img {
+
+.produto:hover img { 
     transform: scale(1.1);
     opacity: 0.7;
     /* Opacidade reduzida no hover */
