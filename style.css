@@ -99,6 +99,7 @@ body {
 .produto img {
     width: 100%;
     max-height: 290px;
+    border-radius: 5px;
     display: block;
     object-fit: cover;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease;
