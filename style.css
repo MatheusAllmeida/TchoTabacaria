@@ -74,7 +74,6 @@ body {
     padding: 10px 0;
     display: flexbox;
     background-color: #ebe8e8;
-    box-shadow: 4px 5px 4px rgb(148, 148, 148);
     border-radius: 5px;
 }
 
@@ -83,21 +82,18 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 30px;
-    justify-content: space-between;
-    /* Distribui espaço entre os produtos */
-    padding: 0 15px;
-    /* Adiciona padding para compensar o espaçamento */
+    justify-content: space-between;/* Distribui espaço entre os produtos */
+    padding: 0 15px; /* Adiciona padding para compensar o espaçamento */
 }
 
 .produto {
-    width: calc(20% - 16px);
-    /* Largura de 20% menos o espaçamento */
+    width: calc(20% - 16px);/* Largura de 20% menos o espaçamento */
     margin-bottom: 20px;
     background-color: #181818;
     border-radius: 5px;
-    box-shadow: 4px 5px 4px #242424;
     overflow: hidden;
     position: relative;
+    padding: 3px;
 }
 
 .produto img {
@@ -110,8 +106,7 @@ body {
 
 .produto:hover img {
     transform: scale(1.1);
-    opacity: 0.7;
-    /* Opacidade reduzida no hover */
+    opacity: 0.7;/* Opacidade reduzida no hover */
 }
 
 
@@ -133,27 +128,23 @@ body {
 
 @media screen and (max-width: 1200px) {
     .produto {
-        width: calc(20% - 16px);
-        /* Ajuste para 5 produtos por linha */
+        width: calc(20% - 16px); /* Ajuste para 5 produtos por linha */
     }
 }
 
 @media screen and (max-width: 992px) {
     .linha-produtos .produto {
-        width: calc(33.33% - 16px);
-        /* 3 produtos por linha */
+        width: calc(33.33% - 16px);/* 3 produtos por linha */
     }
 }
 
 @media screen and (max-width: 768px) {
     .linha-produtos {
-        padding: 0 10px;
-        /* Ajuste de padding para telas menores */
+        padding: 0 10px;/* Ajuste de padding para telas menores */
     }
 
     .linha-produtos .produto {
-        width: calc(50% - 20px);
-        /* 2 produtos por linha */
+        width: calc(50% - 20px); /* 2 produtos por linha */
     }
 }
 
@@ -249,8 +240,7 @@ body {
     border-radius: 4px;
     z-index: 1;
     padding: 10px;
-    text-align: center;
-    /* Centraliza horizontalmente em relação ao botão principal */
+    text-align: center;/* Centraliza horizontalmente em relação ao botão principal */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -275,8 +265,7 @@ body {
 
 
 .dropdown:hover .dropbtn {
-    background-color: var(--cor-primaria);
-    /* Alterado para a cor primária */
+    background-color: var(--cor-primaria); /* Alterado para a cor primária */
 }
 
 
@@ -299,8 +288,7 @@ footer {
     background-color: var(--cor-primaria);
     color: var(--cor-texto);
     text-align: center;
-    font-size: 10px;
-    /* Reduzindo o tamanho da fonte */
+    font-size: 10px;/* Reduzindo o tamanho da fonte */
     font-family: "Open Sans", sans-serif;
     text-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -355,15 +343,13 @@ footer .whatsapp-icon {
     border-radius: 5px;
     border: 1px solid #000000;
     display: none;
-    z-index: 9999;
-    /* Defina um valor alto para garantir que o alerta seja exibido acima de outros elementos */
+    z-index: 9999;/* Defina um valor alto para garantir que o alerta seja exibido acima de outros elementos */
 }
 
 
 /* Estilos para o modal POP-UP*/
 .modal {
-    display: none;
-    /* Ocultar por padrão */
+    display: none; /* Ocultar por padrão */
     position: fixed;
     z-index: 1;
     left: 0;
@@ -372,8 +358,7 @@ footer .whatsapp-icon {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
-    z-index: 9999;
-    /* Fundo escuro semi-transparente */
+    z-index: 9999;/* Fundo escuro semi-transparente */
 }
 
 .modal-content {
