@@ -217,11 +217,6 @@ body {
     display: inline-block;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
 .dropbtn {
     background-color: var(--cor-background);
     color: var(--cor-texto);
