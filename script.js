@@ -57,7 +57,7 @@ function abrirCarrinho() {
 
     var modal = document.createElement('div');
     modal.id = 'modalCarrinho';
-    modal.innerHTML = '<button onclick="fecharCarrinho()" id="fecharModalCarrinho" style="margin-right: 10px; padding: 10px>X</button><ul id="listaItensCarrinho"></ul><div id="totalCarrinho">Total: R$ 0,00</div><div><button onclick="comprar()" id="comprarBtn" style="margin-right: 10px; padding: 10px">Comprar</button><button onclick="esvaziarCarrinho()" id="esvaziarCarrinhoBtn" style="margin-right: 10px; padding: 10px">Esvaziar Carrinho</button></div>';
+    modal.innerHTML = '<button onclick="fecharCarrinho()" id="fecharModalCarrinho">X</button><ul id="listaItensCarrinho"></ul><div id="totalCarrinho">Total: R$ 0,00</div><div><button onclick="comprar()" id="comprarBtn" style="margin-right: 10px; padding: 10px">Comprar</button><button onclick="esvaziarCarrinho()" id="esvaziarCarrinhoBtn" style="margin-right: 10px; padding: 10px">Esvaziar Carrinho</button></div>';
 
     // Adiciona o modal ao corpo do documento
     document.body.appendChild(modal);
