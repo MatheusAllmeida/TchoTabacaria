@@ -277,6 +277,10 @@ body {
     .linha-produtos .produto {
         width: calc(50% - 15px);
     }
+
+    .dropdown {
+        margin: 3px;
+    }
 }
 
 /* Estilos do Footer */
