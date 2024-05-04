@@ -57,7 +57,7 @@ function abrirCarrinho() {
 
     var modal = document.createElement('div');
     modal.id = 'modalCarrinho';
-    modal.innerHTML = '<button onclick="fecharCarrinho()" id="fecharModalCarrinho">X</button><ul id="listaItensCarrinho"></ul><div><button onclick="comprar()" id="comprarBtn" style="margin-right: 10px;">Comprar</button><button onclick="esvaziarCarrinho()" id="esvaziarCarrinhoBtn" style="margin-right: 10px;">Esvaziar Carrinho</button></div>';
+    modal.innerHTML = '<button onclick="fecharCarrinho()" id="fecharModalCarrinho" style="margin-right: 10px; padding: 10px>X</button><ul id="listaItensCarrinho"></ul><div id="totalCarrinho">Total: R$ 0,00</div><div><button onclick="comprar()" id="comprarBtn" style="margin-right: 10px; padding: 10px">Comprar</button><button onclick="esvaziarCarrinho()" id="esvaziarCarrinhoBtn" style="margin-right: 10px; padding: 10px">Esvaziar Carrinho</button></div>';
 
     // Adiciona o modal ao corpo do documento
     document.body.appendChild(modal);
@@ -67,40 +67,8 @@ function abrirCarrinho() {
     var esvaziarBtn = modal.querySelector('#esvaziarCarrinhoBtn');
     var comprarBtn = modal.querySelector('#comprarBtn');
 
-    // Função para estilizar os botões
-    function estilizarBotao(botao) {
-        botao.style.cssText = 'padding: 10px 20px; background-color: rgb(255, 166, 0); color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease';
-    }
-
-    estilizarBotao(fecharBtn);
-    estilizarBotao(esvaziarBtn);
-    estilizarBotao(comprarBtn);
-
-    // Adicionando efeito hover aos botões
-    fecharBtn.addEventListener('mouseover', function () {
-        this.style.backgroundColor = 'rgb(184, 119, 0)';
-    });
-
-    fecharBtn.addEventListener('mouseout', function () {
-        this.style.backgroundColor = 'rgb(255, 166, 0)';
-    });
-
-    esvaziarBtn.addEventListener('mouseover', function () {
-        this.style.backgroundColor = 'rgb(184, 119, 0)';
-    });
-
-    esvaziarBtn.addEventListener('mouseout', function () {
-        this.style.backgroundColor = 'rgb(255, 166, 0)';
-    });
-
-    comprarBtn.addEventListener('mouseover', function () {
-        this.style.backgroundColor = 'rgb(184, 119, 0)';
-    });
-
-    comprarBtn.addEventListener('mouseout', function () {
-        this.style.backgroundColor = 'rgb(255, 166, 0)';
-    });
-
+    // Função para estilizar os botões...
+    
     // Exibe os itens do carrinho
     var listaItensCarrinho = modal.querySelector('#listaItensCarrinho');
     carrinhoItens.forEach(item => {
@@ -109,8 +77,14 @@ function abrirCarrinho() {
         listaItensCarrinho.appendChild(li);
     });
 
-    // Atualiza o contador de itens no carrinho
-    contadorItensCarrinho.textContent = contadorItens;
+    // Calcula o total do carrinho
+    var totalCarrinho = carrinhoItens.reduce((total, item) => {
+        return total + (item.preco * item.quantidade);
+    }, 0);
+
+    // Atualiza o texto do total do carrinho
+    var totalCarrinhoDiv = modal.querySelector('#totalCarrinho');
+    totalCarrinhoDiv.textContent = 'Total: R$ ' + totalCarrinho.toFixed(2);
 }
 
 // Função para fechar o modal do carrinho e limpar o carrinho
@@ -141,12 +115,12 @@ function esvaziarCarrinho() {
 }
 
 // Função para adicionar ao carrinho e exibir pop-up
-function adicionarAoCarrinho(produtoNome) {
+function adicionarAoCarrinho(produtoNome, produtoPreco) {
     var produtoExistente = carrinhoItens.find(item => item.nome === produtoNome);
     if (produtoExistente) {
         produtoExistente.quantidade += 1; // Aumenta a quantidade do produto existente
     } else {
-        carrinhoItens.push({ nome: produtoNome, quantidade: 1 }); // Adiciona o produto ao carrinho com quantidade 1
+        carrinhoItens.push({ nome: produtoNome, preco: produtoPreco, quantidade: 1 }); // Adiciona o produto ao carrinho com quantidade 1
     }
 
     contadorItens++; // Incrementa o contador de itens
@@ -160,6 +134,13 @@ function comprar() {
         mensagem += "- " + item.nome + " (" + item.quantidade + " un " + ")\n";
     });
 
+    // Calcula o total do carrinho
+    var totalCarrinho = carrinhoItens.reduce((total, item) => {
+        return total + (item.preco * item.quantidade);
+    }, 0);
+
+    mensagem += "Total: R$ " + totalCarrinho.toFixed(2) + "\n";
+
     var numeroWhatsApp = "+554989195649";
     window.open("https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(mensagem), "_blank");
 
@@ -172,8 +153,9 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.produto img').forEach(imagem => {
         imagem.addEventListener('click', function () {
             const produtoNome = this.parentNode.getAttribute('data-nome');
+            const produtoPreco = parseFloat(this.parentNode.querySelector('p').textContent.replace('R$', '').trim());
 
-            adicionarAoCarrinho(produtoNome);
+            adicionarAoCarrinho(produtoNome, produtoPreco);
         });
     });
 });
