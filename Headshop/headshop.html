@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width. initial-scale=1.0">
+	<title>Tcho Tabacaria</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="LOGO.jpg" type="LOGO TCHO">
+</head>
+
+<body>
+
+	<div id="myModal" class="modal">
+
+		<!-- Conteúdo do modal -->
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>Proibida a venda para menores de 18 anos.</p>
+		</div>
+
+	</div>
+
+	<div id="meuAlerta" class="alerta"></div>
+	<div class="loja">
+		<h1>Tcho Tabacaria</h1>
+		<div class="menu">
+			<div class="dropdown">
+				<a href="../index.html"><button class="dropbtn">Inicio</button></a>
+			</div>
+		</div>
+	</div>
+	<div id="carrinho">
+		<img src="compras.png" alt="Carrinho de Compras">
+		<span id="contadorCarrinho" class="contador-itens">0</span>
+	</div>
+
+	<button id="btnVoltarTopo" onclick="voltarAoTopo()"><img src="topo.png" alt="topo" srcset=""></button>
+	<div class="container">
+		<!-- incio de uma marca -->
+		<div class="marca" id="HEADSHOP">
+			<h1>HEADSHOP</h1>
+		</div>
+		<div class="linha-produtos">
+            <!-- Produto 1 -->
+			<div class="produto" data-nome="aLeda Regular">
+				<img src="Seda/aLedaRegular.jpg" onclick="mostrarAlerta()" alt="aLeda Regular">
+				<h2>Seda aLeda Regular</h2>
+				<p>R$ 5.00</p>
+			</div>
+            <!-- Produto 3 -->
+            <div class="produto" data-nome="Blunts Hemp Wraps">
+				<img src="Seda/BluntsHempWraps.jpg" onclick="mostrarAlerta()" alt="Blunts Hemp Wraps">
+				<h2>Blunts Hemp Wraps</h2>
+				<p>R$ 13.00</p>
+			</div>
+            <!-- Produto 3 -->
+            <div class="produto" data-nome="Bem Bolado Slim">
+				<img src="Seda/SedaBemBoladoSlim.jpg" onclick="mostrarAlerta()" alt="Bem Bolado Slim">
+				<h2>Bem Bolado Slim</h2>
+				<p>R$ 5.00</p>
+			</div>
+            <!-- Produto 3 -->
+            <div class="produto" data-nome="Seda Bob Marley">
+				<img src="Seda/SedaBobMarley.jpg" onclick="mostrarAlerta()" alt="Seda Bob Marley">
+				<h2>Seda Bob Marley</h2>
+				<p>R$ 4.00</p>
+			</div>
+            <!-- Produto 3 -->
+            <div class="produto" data-nome="Seda Zomo Natural">
+				<img src="Seda/SedaZomoNatural.jpg" onclick="mostrarAlerta()" alt="Seda Zomo Natural">
+				<h2>Seda Zomo Natural</h2>
+				<p>R$ 3.00</p>
+			</div>
+             <!-- Produto 3 -->
+            <div class="produto" data-nome="Seda Zomo Perfect Black">
+				<img src="Seda/SedaZomoPerfectBlack.jpg" onclick="mostrarAlerta()" alt="Seda Zomo Perfect Black">
+				<h2>Seda Zomo Perfect Black</h2>
+				<p>R$ 3.00</p>
+			</div>
+            <div class="produto" data-nome="Seda Smoking DeLux">
+				<img src="Seda/SmokingDeLux.jpg" onclick="mostrarAlerta()" alt="Seda Smoking DeLux">
+				<h2>Seda Smoking DeLux</h2>
+				<p>R$ 5.00</p>
+			</div>
+			<!-- Produto 1 -->
+			<div class="produto" data-nome="Bandeja Psicodelica">
+				<img src="Acessorios/Bandeja.jpg" onclick="mostrarAlerta()" alt="Bandeja Psicodelica">
+				<h2>Bandeja Psicodelica</h2>
+				<p>R$ 21.50</p>
+			</div>
+			<!-- Produto 2 -->
+			<div class="produto" data-nome="Bandeja Vaca Abdução">
+				<img src="Acessorios/BandejaVacaAbdução.jpg" onclick="mostrarAlerta()" alt="Bandeja Vaca Abdução">
+				<h2>Bandeja Vaca Abdução</h2>
+				<p>R$ 21.50</p>
+			</div>
+			<!-- Produto 3 -->
+            <div class="produto" data-nome="Case Mr.Joint">
+				<img src="Acessorios/CaseMr.Joint.jpg" onclick="mostrarAlerta()" alt="Case Mr.Joint">
+				<h2>Case Mr.Joint</h2>
+				<p>R$ 22.00</p>
+			</div>
+			<!-- Produto 3 -->
+            <div class="produto" data-nome="Case TonaBê">
+				<img src="Acessorios/CaseTonaBê2.jpg" onclick="mostrarAlerta()" alt="Case TonaBê">
+				<h2>Case TonaBê</h2>
+				<p>R$ 34.00</p>
+			</div>
+			<!-- Produto 3 -->
+            <div class="produto" data-nome="Case TonaBê">
+				<img src="Acessorios/CaseTonaBê2.jpg" onclick="mostrarAlerta()" alt="Case TonaBê">
+				<h2>Case TonaBê</h2>
+				<p>R$ 34.00</p>
+			</div>
+			<!-- Produto 3 -->
+			<div class="produto" data-nome="Dichavador 4CM">
+				<img src="Acessorios/Dichavador4CM.jpg" onclick="mostrarAlerta()" alt="Dichavador 4CM">
+				<h2>Dichavador 4CM</h2>
+				<p>R$ 13.00</p>
+			</div>
+			<!-- Produto 4 -->
+			<div class="produto" data-nome="Dichavador Ivexx">
+				<img src="Acessorios/DichavadorIvexx.jpg" onclick="mostrarAlerta()" alt="Dichavador Ivexx">
+				<h2>Dichavador Ivexx</h2>
+				<p>R$ 14.00</p>
+			</div>
+			<!-- Produto 5 -->
+			<div class="produto" data-nome="Pipe">
+				<img src="Acessorios/Pipe.jpg" onclick="mostrarAlerta()" alt="Pipe">
+				<h2>Pipe</h2>
+				<p>R$ 22.00</p>
+			</div>
+		</div>
+		<!-- Fim marca -->
+	</div>
+	<!-- Footer com o WhatsApp -->
+	<footer>
+		<h2>WhatsApp <a href=""><a href="https://wa.me/5549989195649" target="_blank">
+					<span class="whatsapp-icon">49 989195649</span>
+				</a>
+		</h2>
+	</footer>
+	<script src="script.js" defer></script>
+</body>
+
+</html>
