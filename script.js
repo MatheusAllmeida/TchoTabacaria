@@ -109,7 +109,7 @@ function esvaziarCarrinho() {
     carrinhoItens = []; // Esvazia o carrinho
     contadorItens = 0; // Zera o contador de itens
     contadorItensCarrinho.textContent = contadorItens; // Atualiza o texto do contador de itens
-
+    salvarItensDoCarrinho(); // Salva o carrinho no localStorage
     // Agora chamamos a função para fechar o carrinho após esvaziar
     fecharCarrinho(); // Fecha o modal do carrinho
 }
@@ -125,6 +125,7 @@ function adicionarAoCarrinho(produtoNome, produtoPreco) {
 
     contadorItens++; // Incrementa o contador de itens
     contadorItensCarrinho.textContent = contadorItens; // Atualiza o texto do contador de itens
+    salvarItensDoCarrinho(); // Salva o carrinho no localStorage
 }
 
 // Função para comprar os itens do carrinho
@@ -147,6 +148,26 @@ function comprar() {
     // Agora chamamos a função para esvaziar o carrinho após a compra
     esvaziarCarrinho();
 }
+
+// Função para carregar os itens do carrinho do localStorage
+function carregarItensDoCarrinho() {
+    var carrinhoArmazenado = localStorage.getItem('carrinhoItens');
+    if (carrinhoArmazenado) {
+        carrinhoItens = JSON.parse(carrinhoArmazenado);
+        contadorItens = carrinhoItens.length;
+        contadorItensCarrinho.textContent = contadorItens;
+    }
+}
+
+// Função para salvar os itens do carrinho no localStorage
+function salvarItensDoCarrinho() {
+    localStorage.setItem('carrinhoItens', JSON.stringify(carrinhoItens));
+}
+
+// Event listener para carregar os itens do carrinho ao carregar a página
+document.addEventListener('DOMContentLoaded', function () {
+    carregarItensDoCarrinho();
+});
 
 // Event listener para adicionar produtos ao carrinho
 document.addEventListener('DOMContentLoaded', function () {
