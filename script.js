@@ -26,10 +26,10 @@ function voltarAoTopo() {
     });
 }
 
-// função alerta adicionou ao carrinho
+// Função alerta adicionou ao carrinho
 function mostrarAlerta() {
     var mensagem = "Adicionado ao carrinho";
-    var tempo = 1000; // 1 segundos
+    var tempo = 1000; // 1 segundo
 
     var alerta = document.getElementById('meuAlerta');
     alerta.textContent = mensagem;
@@ -67,8 +67,6 @@ function abrirCarrinho() {
     var esvaziarBtn = modal.querySelector('#esvaziarCarrinhoBtn');
     var comprarBtn = modal.querySelector('#comprarBtn');
 
-    // Função para estilizar os botões...
-    
     // Exibe os itens do carrinho
     var listaItensCarrinho = modal.querySelector('#listaItensCarrinho');
     carrinhoItens.forEach(item => {
@@ -115,39 +113,63 @@ function esvaziarCarrinho() {
 }
 
 // Função para adicionar ao carrinho e exibir pop-up
-function adicionarAoCarrinho(produtoNome, produtoPreco) {
-    var produtoExistente = carrinhoItens.find(item => item.nome === produtoNome);
+function adicionarAoCarrinho(produtoNome, produtoPreco, produtoMarca) {
+    // Constrói a mensagem a ser exibida
+    let mensagemProduto = produtoNome;
+    if (produtoMarca !== null && produtoMarca !== "CARVÃO" && produtoMarca !== "Aluminio") {
+        mensagemProduto += ` - Marca: ${produtoMarca}`;
+    }
+
+    var produtoExistente = carrinhoItens.find(item => item.nome === produtoNome && item.marca === produtoMarca);
     if (produtoExistente) {
         produtoExistente.quantidade += 1; // Aumenta a quantidade do produto existente
     } else {
-        carrinhoItens.push({ nome: produtoNome, preco: produtoPreco, quantidade: 1 }); // Adiciona o produto ao carrinho com quantidade 1
+        carrinhoItens.push({ nome: produtoNome, preco: produtoPreco, quantidade: 1, marca: produtoMarca }); // Adiciona o produto ao carrinho com quantidade 1
     }
 
     contadorItens++; // Incrementa o contador de itens
     contadorItensCarrinho.textContent = contadorItens; // Atualiza o texto do contador de itens
     salvarItensDoCarrinho(); // Salva o carrinho no localStorage
+
+    mostrarAlerta(); // Mostra o alerta de que o item foi adicionado ao carrinho
+
+    // Verifica se o produto é "CARVÃO" ou "Aluminio" e se a mensagem inclui "Marca"
+    if ((produtoMarca === "CARVÃO" || produtoMarca === "Aluminio") && mensagemProduto.includes('Marca')) {
+        // Remove a parte da mensagem referente à marca
+        mensagemProduto = mensagemProduto.split(' - ')[0];
+    }
+
+    return mensagemProduto;
 }
 
 // Função para comprar os itens do carrinho
 function comprar() {
     var mensagem = "Fala *John*! Gostaria de fazer um pedido:\n";
+  
     carrinhoItens.forEach(item => {
-        mensagem += "- " + item.nome + " (" + item.quantidade + " un " + ")\n";
+      // Check if the product is "CARVÃO" and remove the brand information
+      if (item.nome === "CARVÃO") {
+        mensagem += `- ${item.nome} (${item.quantidade} un)\n`;
+      } else {
+        mensagem += `- ${item.nome} (${item.quantidade} un) - Marca: ${item.marca || ''}\n`;
+      }
     });
-
-    // Calcula o total do carrinho
+  
+    // Calculate the total cart price
     var totalCarrinho = carrinhoItens.reduce((total, item) => {
-        return total + (item.preco * item.quantidade);
+      return total + (item.preco * item.quantidade);
     }, 0);
-
+  
     mensagem += "Total: R$ " + totalCarrinho.toFixed(2) + "\n";
-
+    mensagem += "Frete a combinar.\n"; 
+  
     var numeroWhatsApp = "+554989195649";
     window.open("https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(mensagem), "_blank");
-
-    // Agora chamamos a função para esvaziar o carrinho após a compra
+  
+    // Clear the cart after purchase
     esvaziarCarrinho();
-}
+  }
+
 
 // Função para carregar os itens do carrinho do localStorage
 function carregarItensDoCarrinho() {
@@ -174,12 +196,21 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.produto img').forEach(imagem => {
         imagem.addEventListener('click', function () {
             const produtoNome = this.parentNode.getAttribute('data-nome');
+            const produtoMarca = this.closest('.linha-produtos').previousElementSibling.getAttribute('id');
             const produtoPreco = parseFloat(this.parentNode.querySelector('p').textContent.replace('R$', '').trim());
 
-            adicionarAoCarrinho(produtoNome, produtoPreco);
+            // Verifica se o produto deve incluir a marca ao ser adicionado ao carrinho
+            if (produtoNome === "CARVÃO" || produtoNome === "Alumínio") {
+                // Não inclui a marca
+                adicionarAoCarrinho(produtoNome, produtoPreco, null);
+            } else {
+                // Inclui a marca
+                adicionarAoCarrinho(produtoNome, produtoPreco, produtoMarca);
+            }
         });
     });
 });
+
 
 // Event listener para abrir o carrinho
 document.getElementById('carrinho').addEventListener('click', function () {
