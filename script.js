@@ -144,7 +144,7 @@ function adicionarAoCarrinho(produtoNome, produtoPreco, produtoMarca) {
 
 // Função para comprar os itens do carrinho
 function comprar() {
-    var mensagem = "Fala *John*! Gostaria de fazer um pedido:\n";
+    var mensagem = "Fala *Gleize*! Gostaria de fazer um pedido:\n";
   
     carrinhoItens.forEach(item => {
       // Check if the product is "CARVÃO" and remove the brand information
@@ -163,7 +163,7 @@ function comprar() {
     mensagem += "Total: R$ " + totalCarrinho.toFixed(2) + "\n";
     mensagem += "Frete a combinar.\n"; 
   
-    var numeroWhatsApp = "+554989195649";
+    var numeroWhatsApp = "+554988455171";
     window.open("https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(mensagem), "_blank");
   
     // Clear the cart after purchase
